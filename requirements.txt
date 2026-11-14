@@ -1,2 +1,5 @@
-opencv-python
-# roboflow/sports and its soccer example requirements are installed in the notebook
+# Pins needed on top of roboflow/sports' own requirements.
+# supervision >= 0.26 removed sv.ByteTrack, which the soccer example still uses.
+supervision==0.25.1
+# Headless build only: the GUI build tries to open a display and crashes on Colab.
+opencv-python-headless
