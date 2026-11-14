@@ -43,6 +43,10 @@ def main() -> None:
             })
             print(f"{t['mode']:<22} {proc_fps:6.2f} fps  ({ratio:.2f}x real time)")
 
+    if not rows or all(r["status"] != "ok" for r in rows):
+        print("\nNo successful runs in timings.csv. Fix run_modes.py errors first.")
+        return
+
     with args.out.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         writer.writeheader()
