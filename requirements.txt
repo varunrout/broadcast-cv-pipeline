@@ -1,0 +1,2 @@
+opencv-python
+# roboflow/sports and its soccer example requirements are installed in the notebook
